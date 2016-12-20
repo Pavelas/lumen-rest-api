@@ -7,7 +7,7 @@ class MinesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$user = Mine::create([
+		$mine = Mine::create([
 			'name' => 'Basic Mine',
 			'description' => 'This is basic mine. You can demine it just by pressing the button.',
 		]);
