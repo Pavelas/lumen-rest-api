@@ -27,6 +27,6 @@ class CreateMinesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('mines');
+        Schema::dropIfExists('mines');
     }
 }
