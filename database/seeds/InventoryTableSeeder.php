@@ -8,15 +8,17 @@ use Illuminate\Database\Seeder;
 class InventoryTableSeeder extends Seeder
 {
 
-    public function run()
-    {
-        $user = User::first();
-        $mine = Mine::first();
+	public function run()
+	{
+		for ($i = 1; $i <= 10; $i++) {
+			$user = User::first();
+			$mine = Mine::first();
 
-        $inventory = new Inventory();
-        $inventory->mine_id = $mine->id;
+			$inventory = new Inventory();
+			$inventory->mine_id = $mine->id;
 
-        $user->inventory()->save($inventory);
-    }
+			$user->inventory()->save($inventory);
+		}
+	}
 
 }

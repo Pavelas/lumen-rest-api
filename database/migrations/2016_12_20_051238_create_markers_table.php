@@ -16,7 +16,7 @@ class CreateMarkersTable extends Migration
         Schema::create('markers', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('item_id')->unsigned();
+            $table->integer('item_id')->unsigned()->unique();
             $table->foreign('item_id')
                 ->references('id')->on('inventories')->onDelete('cascade');
 
