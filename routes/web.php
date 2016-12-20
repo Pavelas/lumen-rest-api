@@ -14,11 +14,14 @@
 $api = app('Dingo\Api\Routing\Router');
 
 // JWT Protected routes
-$api->version('v1', ['middleware' => 'api.auth'], function ($api) {
-    $api->get('/index', 'App\Http\Controllers\UserController@index');
+$api->version('v1', ['namespace' => 'App\Http\Controllers', 'middleware' => 'api.auth'], function ($api) {
+    // $api->get('/index', 'UserController@index');
 });
 
 // Publicly accessible routes
-$api->version('v1', [], function ($api) {
-    $api->post('/login', 'App\Http\Controllers\AuthController@login');
+$api->version('v1', ['namespace' => 'App\Http\Controllers'], function ($api) {
+    $api->get('/', 'PageController@index');
+
+    $api->get('/markers', 'MarkerController@getAll');
+    $api->post('/login', 'AuthController@login');
 });
