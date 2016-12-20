@@ -9,16 +9,18 @@ class Inventory extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
      */
-    protected $fillable = [
-        'mine_id', 'user_id',
-    ];
+    protected $fillable = ['mine_id', 'user_id',];
+
+    /**
+     * The attributes excluded from the model's JSON form.
+     * 
+     */
+    protected $hidden = ['id'];
 
     /**
      * Indicates if the model should be timestamped.
      *
-     * @var bool
      */
     public $timestamps = false;
 
