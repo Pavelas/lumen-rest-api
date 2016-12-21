@@ -10,6 +10,7 @@ class UsersTableSeeder extends Seeder {
 		$user = User::create([
 			'username' => 'demo',
 			'email' => 'demo@mail.com',
+			'avatar' => 'demo.jpg',
 			'password' => 'secret',
 		]);
 	}

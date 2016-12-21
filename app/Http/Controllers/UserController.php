@@ -12,7 +12,8 @@ class UserController extends Controller
      */
     public function index()
     {
-    	$users = User::all();
-    	return $users;
+        $user = app('Dingo\Api\Auth\Auth')->user();
+
+        return $user;
     }
 }
